@@ -1,4 +1,5 @@
 from datetime import datetime
+from .helpers.company_inventory import get_company_inventory
 
 
 class SimpleReport():
@@ -33,15 +34,7 @@ class SimpleReport():
         return closest_date.date()
 
     def get_company_with_the_most_inventory(stock):
-        company_with_most_inventory = {}
-
-        for product in stock:
-            if product['nome_da_empresa'] not in company_with_most_inventory:
-                company_with_most_inventory[product['nome_da_empresa']] = 1
-            else:
-                company_with_most_inventory[product['nome_da_empresa']] += 1
-
-        return max(company_with_most_inventory)
+        return max(get_company_inventory(stock))
 
     @classmethod
     def generate(cls, stock):

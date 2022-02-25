@@ -16,4 +16,5 @@ class InventoryRefactor(Iterable):
     def __iter__(self):
         return InventoryIterator(self.data)
 
-# Solução baseada no repositório: https://github.dev/tryber/sd-012-inventory-report/pull/47/files
+# Solução baseada no repositório:
+# https://github.dev/tryber/sd-012-inventory-report/pull/47/files

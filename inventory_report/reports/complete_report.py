@@ -14,7 +14,6 @@ class CompleteReport(SimpleReport):
     @classmethod
     def generate(cls, stock):
         companies = cls.format_company_inventory(stock)
-        print(companies)
         return(
             f'{SimpleReport.generate(stock)}\n'
             f'Produtos estocados por empresa: \n'

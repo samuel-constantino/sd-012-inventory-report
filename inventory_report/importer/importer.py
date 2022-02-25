@@ -1,11 +1,8 @@
-from abc import abstractclassmethod
+from abc import ABC, abstractmethod
 
 
-class Importer():
-    def __init__(self, import_file):
-        self.import_file = import_file
+class Importer(ABC):
 
-    @abstractclassmethod
+    @abstractmethod
     def import_data(path):
-        with open(path) as file:
-            return file.read()
+        raise NotImplementedError

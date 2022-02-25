@@ -1,11 +1,12 @@
 from .importer import Importer
+from ..inventory.helpers.read_json import read_json
 
 
 class JsonImporter(Importer):
-    def import_data(self):
-        result = []
-        if self.split('.')[1] != 'json':
+    def import_data(path):
+        extension = path.split('.')[1]
+
+        if extension != 'json':
             raise ValueError("Arquivo inválido")
-        else:
-            result.extend(self.import_data(self))
-        return result
+
+        return read_json(path)
